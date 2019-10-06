@@ -1,3 +1,5 @@
+import { tsConstructorType } from "@babel/types"
+
 interface BarrierInterface {
   wait(): Promise<void>
 }
@@ -58,15 +60,18 @@ class P_Barrier implements BarrierInterface {
   }
 }
 
-function nBarrier(n: number): N_Barrier
-function nBarrier(...asyncProcesses: Array<Promise<void>>): P_Barrier
-function nBarrier(input): N_Barrier|P_Barrier {
-  if (typeof input === 'number') {
-    return new N_Barrier(input)
-  } else if (typeof input === 'object' && input.isArray()) {
-    return new P_Barrier(input)
+function nBarrier(n: number): N_Barrier {
+  if (typeof n === 'number') {
+    return new N_Barrier(n)
   }
-  throw new Error(`Expected number or array of Promises instead got '${typeof input}'.`);
+  throw new Error(`Expected number, got '${typeof n}'.`);
 }
 
-export = nBarrier
+function pBarrier(...asyncProcesses: Promise<void>[]): P_Barrier {
+  if (typeof asyncProcesses === 'object' && asyncProcesses instanceof Array) {
+    return new P_Barrier(asyncProcesses)
+  }
+  throw new Error(`Expected array of Promises instead got '${typeof asyncProcesses}'.`);
+}
+
+export = { nBarrier, pBarrier }
