@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "build && jest"
+    "test": "npm run-script build && jest"
   },
   "author": "Mario Jäckle <github@jacksbox.de",
   "license": "MIT",
