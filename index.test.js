@@ -63,3 +63,36 @@ describe('nBarrier', () => {
     })
   })
 })
+
+
+describe('pBarrier', () => {
+  let countPassed = 0
+  beforeEach(() => {
+    countPassed = 0
+  })
+  const task = time => new Promise(resolve =>
+    setTimeout(async () => {
+      countPassed++
+      resolve()
+    }, time)
+  )
+
+  it('should wait for n = 1', async done => {
+    const barrier = pBarrier(task(0))
+    await barrier.wait()
+    expect(countPassed).toBe(1)
+    done()
+  })
+  it('should wait for n = 2', async done => {
+    const barrier = pBarrier(task(0), task(200))
+    await barrier.wait()
+    expect(countPassed).toBe(2)
+    done()
+  })
+  it('should wait for n = 3', async done => {
+    const barrier = pBarrier(task(0), task(200), task(500))
+    await barrier.wait()
+    expect(countPassed).toBe(3)
+    done()
+  })
+})
