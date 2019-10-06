@@ -1,0 +1,14 @@
+{
+  "name": "n-barrier",
+  "version": "0.0.1",
+  "description": "n-barrier implementation for javascript",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Mario Jäckle <github@jacksbox.de",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.6.3"
+  }
+}
