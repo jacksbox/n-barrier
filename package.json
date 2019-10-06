@@ -1,7 +1,7 @@
 {
   "name": "n-barrier",
-  "version": "0.0.1",
-  "description": "n-barrier implementation for javascript",
+  "version": "1.0.0",
+  "description": "Simple barrier implementation for syncing multiple asyncronouse tasks",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
@@ -9,6 +9,14 @@
   },
   "author": "Mario Jäckle <github@jacksbox.de",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jacksbox/n-barrier/issues"
+  },
+  "homepage": "https://github.com/jacksbox/n-barrier#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacksbox/n-barrier.git"
+  },
   "devDependencies": {
     "jest": "^24.9.0",
     "typescript": "^3.6.3"
