@@ -4,11 +4,13 @@
   "description": "n-barrier implementation for javascript",
   "main": "index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "build && jest"
   },
   "author": "Mario Jäckle <github@jacksbox.de",
   "license": "MIT",
   "devDependencies": {
+    "jest": "^24.9.0",
     "typescript": "^3.6.3"
   }
 }
