@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+      "module": "commonJS",
+      "lib": [
+        "ES2016"
+      ],
+      "removeComments": true
+  },
+  "files": [
+    "index.ts"
+  ]
+}

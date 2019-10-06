@@ -69,4 +69,4 @@ function nBarrier(input): N_Barrier|P_Barrier {
   throw new Error(`Expected number or array of Promises instead got '${typeof input}'.`);
 }
 
-export default nBarrier
+export = nBarrier
